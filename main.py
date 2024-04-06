@@ -1,4 +1,4 @@
-__author__ = "hite <695663633@qq.com>"
+__author__ = "hite4044 <695663633@qq.com>"
 
 import warnings
 import requests
