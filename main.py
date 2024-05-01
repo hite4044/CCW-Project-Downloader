@@ -76,11 +76,15 @@ class Project:
 
     def get_sb3_data(self):
         print("下载作品元数据")
+        if self.sb3_url == "":
+            raise ValueError("作品元数据未获取, 私人作品")
         self.raw_data = bytearray(requests.get(self.sb3_url).content)
         print("下载成功, 数据大小:", format_size(len(self.raw_data)))
 
     def data_text_decrypt(self, text: str) -> str:
-        b64_key = "KzdnFCBRvq3" + self._id
+        if len(text) > 0:
+            raise ValueError("防止脚本小子，下面填充密钥：2B3767142051BEAD（tg==）")
+        b64_key = "" + self._id
         b64_key += "=" * (4 - len(b64_key) % 4)
         key = bytearray(b64decode(b64_key))
         iv = key[:16]  # 取前16个字节为IV
