@@ -1,0 +1,4 @@
+requests~=2.31.0
+beautifulsoup4~=4.12.2
+DownloadKit~=1.0.4
+pycryptodome~=3.20.0
